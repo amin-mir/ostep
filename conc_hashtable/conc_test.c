@@ -3,10 +3,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "hash_table.h"
+#include "hasht.h"
 #include "utils.h"
 
-#define LOOPS 1000
+#define LOOPS 100000
 
 typedef struct {
   int id;

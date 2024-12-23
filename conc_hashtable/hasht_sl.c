@@ -5,7 +5,7 @@
 #include <stddef.h>
 #include <stdlib.h>
 
-#include "hash_table.h"
+#include "hasht.h"
 #include "utils.h"
 
 #define MAX_BUCKETS 1000

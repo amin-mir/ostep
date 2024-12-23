@@ -1,6 +1,6 @@
 #include <stdlib.h>
 
-#include "seq_linked_list.h"
+#include "ll_seq.h"
 #include "utils.h"
 
 void linked_list_init(LinkedList *ll) { ll->head = NULL; }

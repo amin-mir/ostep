@@ -1,6 +1,6 @@
 #include <assert.h>
 
-#include "seq_linked_list.h"
+#include "ll_seq.h"
 #include "utils.h"
 
 static void test_operations_empty_list() {

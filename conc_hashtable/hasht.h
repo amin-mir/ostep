@@ -1,7 +1,7 @@
 #include <pthread.h>
 #include <stddef.h>
 
-#include "seq_linked_list.h"
+#include "ll_seq.h"
 
 typedef struct {
   pthread_mutex_t lock;
