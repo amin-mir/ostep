@@ -5,22 +5,34 @@ CFLAGS = -Wall -Wextra -Wpedantic
 
 all: test
 
-test: test/seq-ll test/hasht-sl test/conc-hasht-sl
+test: test/sll test/cll test/sht test/mht test/conc-hasht-sl
 
-test/seq-ll: ll_test.o ll_seq.o utils.o
-	$(CC) $(CFLAGS) ll_test.o ll_seq.o utils.o -o ll_test
-	./ll_test
+test/sll: sll_test.o sll.o utils.o
+	$(CC) $(CFLAGS) sll_test.o sll.o utils.o -o sll_test
+	./sll_test
 
-test/hasht-sl: hasht_test.o hasht_sl.o ll_seq.o utils.o
-	$(CC) $(CFLAGS) hasht_test.o hasht_sl.o ll_seq.o utils.o -o ht_test
-	./ht_test
+test/cll: cll_test.o cll.o utils.o
+	$(CC) $(CFLAGS) cll_test.o cll.o utils.o -o cll_test
+	./cll_test
 
-test/conc-hasht-sl: conc_test.o hasht_sl.o ll_seq.o utils.o
-	$(CC) $(CFLAGS) conc_test.o hasht_sl.o ll_seq.o utils.o -o conc_ht_sl
-	./conc_ht_sl 4
+test/sht: sht_test.o sht.o sll.o utils.o
+	$(CC) $(CFLAGS) sht_test.o sht.o sll.o utils.o -o sht_test
+	./sht_test
+
+test/mht: mht_test.o mht.o cll.o utils.o
+	$(CC) $(CFLAGS) mht_test.o mht.o cll.o utils.o -o mht_test
+	./mht_test
+
+test/sht-load: ht_load_test.o sht.o sll.o utils.o
+	$(CC) $(CFLAGS) -DSL ht_load_test.o sht.o sll.o utils.o -o sht_load_test
+	./sht_load_test 4
+
+test/mht-load: ht_load_test.o mht.o cll.o utils.o
+	$(CC) $(CFLAGS) ht_load_test.o mht.o cll.o utils.o -o mht_load_test
+	./mht_load_test 4
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean: 
-	rm -rf *.o ll_test ht_test conc_ht_sl
+	rm -rf *.o *_test 

@@ -3,7 +3,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "hasht.h"
+#ifdef SL
+#include "sht.h"
+#else
+#include "mht.h"
+#endif
+
 #include "utils.h"
 
 #define LOOPS 100000
@@ -17,12 +22,12 @@ void *write_read_hash_table(void *arg) {
   TArgs *args = (TArgs *)arg;
   int key = args->id * LOOPS;
 
-  int i;
-  for (i = 0; i < LOOPS; i++) {
+  int start = rand() % 10;
+  for (int i = start; i < LOOPS; i++) {
     hash_table_insert(args->ht, key + i);
   }
 
-  for (i = 0; i < LOOPS; i++) {
+  for (int i = start; i < LOOPS; i++) {
     assert(hash_table_exists(args->ht, key + i));
   }
   assert(!hash_table_exists(args->ht, -1000));
