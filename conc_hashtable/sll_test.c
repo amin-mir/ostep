@@ -1,7 +1,7 @@
 #include <assert.h>
 
+#include "../utils.h"
 #include "sll.h"
-#include "utils.h"
 
 static void test_operations_empty_list() {
   TEST;

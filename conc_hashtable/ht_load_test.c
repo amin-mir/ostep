@@ -9,7 +9,7 @@
 #include "mht.h"
 #endif
 
-#include "utils.h"
+#include "../utils.h"
 
 #define LOOPS 100000
 

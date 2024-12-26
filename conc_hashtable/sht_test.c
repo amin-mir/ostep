@@ -1,7 +1,7 @@
 #include <assert.h>
 
+#include "../utils.h"
 #include "sht.h"
-#include "utils.h"
 
 #define BUCKETS 100
 

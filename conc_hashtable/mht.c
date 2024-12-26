@@ -5,8 +5,8 @@
 #include <stddef.h>
 #include <stdlib.h>
 
+#include "../utils.h"
 #include "mht.h"
-#include "utils.h"
 
 #define MAX_BUCKETS 1000
 

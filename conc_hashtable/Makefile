@@ -31,6 +31,9 @@ test/mht-load: ht_load_test.o mht.o cll.o utils.o
 	$(CC) $(CFLAGS) ht_load_test.o mht.o cll.o utils.o -o mht_load_test
 	./mht_load_test 2
 
+utils.o: ../utils.c
+	$(CC) $(CFLAGS) -c ../utils.c -o utils.o
+
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 

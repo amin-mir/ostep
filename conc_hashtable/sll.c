@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
+#include "../utils.h"
 #include "sll.h"
-#include "utils.h"
 
 void sll_init(LinkedList *ll) { ll->head = NULL; }
 

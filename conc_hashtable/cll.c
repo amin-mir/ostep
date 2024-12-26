@@ -1,7 +1,7 @@
 #include <stdlib.h>
 
+#include "../utils.h"
 #include "cll.h"
-#include "utils.h"
 
 #define FILE_ID "conc"
 
