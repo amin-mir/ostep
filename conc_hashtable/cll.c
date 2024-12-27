@@ -7,7 +7,7 @@
 
 void cll_init(LinkedList *cll) {
   cll->head = NULL;
-  Pthread_mutex_init(&cll->lock, NULL);
+  Pthread_mutex_init(&cll->lock);
 }
 
 /*

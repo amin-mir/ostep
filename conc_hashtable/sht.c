@@ -28,7 +28,7 @@ HashTable *hash_table_new(size_t buckets) {
     return NULL;
 
   ht->buckets = buckets;
-  Pthread_mutex_init(&ht->lock, NULL);
+  Pthread_mutex_init(&ht->lock);
   for (size_t i = 0; i < buckets; i++) {
     sll_init(&ht->lists[i]);
   }
